@@ -1,0 +1,108 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://assets/minecraft_cookie.png" type="Texture" id=1]
+[ext_resource path="res://src/Game/Cookie.gd" type="Script" id=2]
+[ext_resource path="res://assets/pop.ogg" type="AudioStream" id=3]
+[ext_resource path="res://assets/HelvetiPixel.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://src/Game/Game.gd" type="Script" id=5]
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.0901961, 0.0941176, 0.0980392, 1 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 20
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0, 0, 0, 0.792157 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 64
+font_data = ExtResource( 4 )
+
+[node name="Game" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = 81.0
+margin_bottom = 109.0
+custom_fonts/font = SubResource( 1 )
+text = "Yummy Cookies : 0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -119.0
+margin_bottom = -91.0
+custom_fonts/font = SubResource( 4 )
+text = "Collect 20 Cookies!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cookie" type="TextureButton" parent="."]
+anchor_right = 250.0
+margin_left = 170.0
+margin_top = 163.0
+margin_right = -124670.0
+margin_bottom = 323.0
+texture_normal = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pop" type="AudioStreamPlayer" parent="Cookie"]
+stream = ExtResource( 3 )
+
+[node name="WinScreen" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="WinScreen"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 2 )
+
+[node name="Label" type="Label" parent="WinScreen"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 3 )
+text = "YOU WIN!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
