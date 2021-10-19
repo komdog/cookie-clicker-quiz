@@ -2,7 +2,7 @@ extends Control
 
 # Instructions :
 # -------
-# When you click the cookie the number on screen is supposed to up
+# When you click the cookie, the number on screen is supposed to go up
 # The cookie should also play a sound when clicked
 # But OH NO!! it's not working D:
 # Help me fix it please <3
